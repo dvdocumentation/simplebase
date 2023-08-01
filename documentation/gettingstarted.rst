@@ -1,5 +1,5 @@
 Basic usage
----------------
+====================
 
 Installation
 
