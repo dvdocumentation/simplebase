@@ -20,8 +20,6 @@ It was written for situations where you need to organize a local database withou
 • Find an element by equality in a collection with 1000000+ entries in 1-2 microseconds
 • Organize real-time search by occurrence of a string across a large collection without friezes
 
-Getting started sapmle
---------------------------
 
 .. code-block:: Python
 
