@@ -1,29 +1,29 @@
 SimpleBase is a JSON based serverless database with improved performance on key operations
 
-The strength of document-oriented NoSQL DBMS is their natural simplicity, but they are usually not very fast (unless they are serious server DBMS like MongoDB). SimpleBase fixes performance issues in critical areas
+The strength of document-oriented NoSQL database is their natural simplicity, but they are usually not very fast (unless they are serious server databases like MongoDB etc). SimpleBase solves performance issues in critical areas. This way we get ease of development and performance in one package.
 
- * **Instant addition** of new records to collections, regardless of the size of the collection due to a special storage architecture
- * Faster work with operations, due to the fact that it is **not required to encode / decode the entire collection** (which can be very large)
- * Collections are always **stored in RAM** with concurrency change tracking: data is re-read from disk only if it has been changed by another process
- * **ACID for multi-user and multi-threading**
- * Two types of indexes for key types of queries - a **hash index** and a **special B-tree** for full-text search
- * Support for **transactions** (sessions)
- * MongoDB-like syntax, incl. 100% similar query language
- * Written in **pure python**, only about 1800 lines
+* **Instant addition** of new records to collections, regardless of the size of the collection due to a special storage architecture
+* Faster work with operations, due to the fact that it is **not required to encode / decode the entire collection** (which can be very large)
+* Collections are always **stored in RAM** with concurrency change tracking: data is re-read from disk only if it has been changed by another process
+* **ACID for multi-user and multi-threading**
+* Two types of indexes for key types of queries - a **hash index** and a **special B-tree** for full-text search
+* Support for **transactions** (sessions)
+* MongoDB-like syntax, incl. 100% similar query language
+* Written in **pure python**, only about 1800 lines
 
 Why SimpleBase?
 ------------------
 
 It was written for situations where you need to organize a local database without a server with a JSON-oriented interface. But at the same time, increased performance requirements: for large collections (1000000+ documents in the collection), fast, almost instantaneous execution of some operations is required:
 
-• Add a new document to the collection with 1000000 documents - 0.007 seconds, with 2000000 documents - also 0.0007 seconds - ie. operation time does not depend on the size of the table
-• Find an element by equality in a collection with 1000000+ entries in 1-2 microseconds
-• Organize real-time search by occurrence of a string across a large collection without friezes
+* Add a new document to the collection with 1000000 documents - 0.007 seconds, with 2000000 documents - also 0.0007 seconds - ie. operation time does not depend on the size of the table
+* Find an element by equality in a collection with 1000000+ entries in 1-2 microseconds
+* Organize real-time search by occurrence of a string across a large collection without friezes
 
 
 .. code-block:: Python
 
-  from simplebase import SimpleBase,DBSession
+  from pysimplebase import SimpleBase,DBSession
   
   #creatig database
   db = SimpleBase("samples_db")
