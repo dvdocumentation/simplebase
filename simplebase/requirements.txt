@@ -1,0 +1,2 @@
+filelock==3.12.2
+msgspec==0.16.0
