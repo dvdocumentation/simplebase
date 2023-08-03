@@ -1,4 +1,4 @@
-from simplebase import SimpleBase,DBSession
+from pysimplebase import SimpleBase,DBSession
 
 #creatig database
 db = SimpleBase("samples_db")
