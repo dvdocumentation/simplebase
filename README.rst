@@ -24,9 +24,11 @@ It was written for situations where you need to organize a local database withou
 .. code-block:: Python
 
   from pysimplebase import SimpleBase,DBSession
+  from pathlib import Path
+  import os
   
   #creatig database
-  db = SimpleBase("samples_db")
+  db = SimpleBase("samples_db",path=os.path.dirname(Path(__file__).parent))
   
   #inserting documents into collection
   id = db['goods'].insert({"name":"coffee", "price":15}) #insert one document
