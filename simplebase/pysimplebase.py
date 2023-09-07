@@ -1829,7 +1829,11 @@ class SimpleBase(dict):
         if 'path' in kwargs:
             basepath = kwargs.get("path")+os.sep+name
         else:
-            basepath =os.path.dirname(os.path.realpath(__file__))+os.sep+name
+            try:
+                abs_path = os.path.abspath((inspect.stack()[0])[1])
+                basepath =os.path.dirname(abs_path)+os.sep+name
+            except:
+                basepath =os.path.dirname(os.path.realpath(__file__))+os.sep+name
         
         self._name = name
         
