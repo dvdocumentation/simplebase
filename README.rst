@@ -69,7 +69,7 @@ It was written for situations where you need to organize a local database withou
   #text indexes
   db['goods'].register_text_index("fts","name", dynamic=True) #there are dynamic and stored indexes
   db['goods'].reindex_text("fts")
-  r = db['goods'].search_text_index("appl")
+  r = db['fts'].search_text_index("appl")
   
   #delete
   db['goods'].delete(id)
